@@ -8,6 +8,6 @@ gcc \
   gvimborder.c \
   -luser32 -lgdi32
 
-mv gvimborder.dll "/c/Program Files (x86)/Vim/vim73/"
+cp gvimborder.dll "/c/Program Files (x86)/Vim/vim73/"
 
 "/c/Program Files (x86)/Vim/vim73/gvim.exe"

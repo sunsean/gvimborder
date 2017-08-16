@@ -1,4 +1,4 @@
-/// :call libcallnr("gvimborder.dll", "RemoveBorder", 0)
+/// :call libcallnr("gvimborder.dll", "SetBorder", 0xFFAA33)
 
 #include <windows.h>
 
@@ -31,7 +31,7 @@ BOOL CALLBACK FindChildProc(HWND hwnd, LPARAM lParam)
 }
 
 //TODO: accept a string parameter of the background color
-LONG __declspec(dllexport) RemoveBorder()
+LONG __declspec(dllexport) SetBorder(COLORREF backgroundColor)
 {
   HWND hTop = NULL;
   HWND hTextArea = NULL;
@@ -55,7 +55,7 @@ LONG __declspec(dllexport) RemoveBorder()
     SetWindowPos(hTextArea, HWND_TOP, 0, 0, width, height, SWP_SHOWWINDOW);
 
     // Set Background colors
-    HBRUSH b = CreateSolidBrush(RGB(0,0,0));
+    HBRUSH b = CreateSolidBrush(backgroundColor);
     SetClassLongPtr(hTop, GCLP_HBRBACKGROUND, (LONG_PTR) b);
     SetClassLongPtr(hTextArea, GCLP_HBRBACKGROUND, (LONG_PTR) b);
   }
