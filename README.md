@@ -4,3 +4,5 @@
    ```vim
    autocmd VimEnter * call libcallnr("gvimborder.dll", "SetBorder", 0x080808)
    ```
+
+<sub>Based on work from Derek McLoughlin and Yasuhiro Matsumoto.</sub>
