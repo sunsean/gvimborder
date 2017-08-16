@@ -30,7 +30,6 @@ BOOL CALLBACK FindChildProc(HWND hwnd, LPARAM lParam)
   return TRUE;
 }
 
-//TODO: accept a string parameter of the background color
 LONG __declspec(dllexport) SetBorder(COLORREF backgroundColor)
 {
   HWND hTop = NULL;
